@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Todo App</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+
+<body>
+
+<div class="container">
+    <h2 id="day"></h2>
+    <input type="text" id="search" placeholder="Поиск">
+
+    <div class="filters">
+        <button class="filter active" data-type="all">Все</button>
+        <button class="filter" data-type="active">Активные</button>
+        <button class="filter" data-type="completed">Завершенные</button>
+    </div>
+
+    <div id="todo-list"></div>
+
+    <button class="add-btn"><img src="./img/icon.svg" alt=""></button>
+</div>
+
+<!-- MODAL -->
+<div class="modal-bg">
+    <div class="modal">
+        <input type="text" id="task-text" placeholder="Описание">
+        <input type="date" id="task-date">
+
+        <label style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <div class="switch">
+                <input type="checkbox" id="task-remind" checked>
+                <span class="slider"></span>
+            </div>
+            Напомнить мне
+        </label>
+
+        <div class="modal-buttons">
+            <button id="add-task">Добавить</button>
+            <button id="close-modal">Отмена</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
