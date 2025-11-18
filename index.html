@@ -7,15 +7,22 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
 
 <body>
 
 <div class="container">
-    <h2 id="day"></h2>
-    <input type="text" id="search" placeholder="Поиск">
+    <h2 id="header-day"></h2>
+    <h3 id="header-date"></h3> 
+    
+    <div class="search">
+        <input type="text" id="search" placeholder="Поиск">
+        <img src="/img/search.svg" alt="">
+    </div>
 
     <div class="filters">
         <button class="filter active" data-type="all">Все</button>
@@ -33,7 +40,7 @@
     <div class="modal">
         <div class="container">
             <input type="text" id="task-text" placeholder="Описание">
-            <input type="date" id="task-date">
+            <input type="data" id="task-date">
 
             <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                 <div class="switch">
