@@ -1,10 +1,13 @@
-@import
-url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 body { 
@@ -16,7 +19,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 1320px;
-    padding: 0 30px;
+    padding-inline: min(30px, 5vw);
 }
 
 .search { 
@@ -27,6 +30,7 @@ body {
     background-color: #1D1B2014;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .search input {
@@ -34,6 +38,7 @@ body {
     border: none;
     padding: 12px;
     width: 100%;
+    font-size: 18px;
 }
 
 .filters { 
@@ -42,11 +47,13 @@ body {
 }
 
 .filters button {
-    flex:1; padding: 10px; 
+    flex: 1; 
+    padding: 10px; 
     border: 1px solid #EBDEF7; 
     cursor: pointer; 
     background: white;
     border-right: none;
+    font-size: 16px;
 }
 
 .filters button:last-child { 
@@ -65,7 +72,9 @@ body {
     align-items: center;
     margin-bottom: 8px; 
     gap: 10px;
+    width: 100%;
 }
+
 .todo-item.completed { 
     text-decoration: line-through; 
     opacity: 0.5; 
@@ -81,17 +90,19 @@ body {
     border: none; 
     cursor: pointer;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
-/* Modal */
 .modal-bg {
     position: fixed; 
-    inset:0; 
-    background:rgba(0,0,0,0.5);
+    inset: 0; 
+    background: rgba(0,0,0,0.5);
     display: none; 
     justify-content: center; 
     align-items: flex-end;
 }
+
 .modal {
     background: #faf6ff; 
     width: 100%; 
@@ -107,17 +118,18 @@ body {
 }
 
 .modal input {
-        width: 100%; 
-        padding: 10px; 
-        border: 1px solid #ccc; 
-        border-radius: 8px; 
-        margin-bottom: 12px; 
-    }
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    margin-bottom: 12px; 
+    font-size: 18px;
+}
 
 .modal-buttons { 
     display: flex; 
     justify-content: space-between; 
-    margin-top:10px; 
+    margin-top: 10px; 
 }
 
 .modal-buttons button { 
@@ -125,16 +137,18 @@ body {
     border-radius: 8px; 
     cursor: pointer; 
     border: none; 
+    font-size: 16px;
 }
 
-#add-task{ 
+#add-task { 
     background: #b394ff; 
     color: white;
 }
 
-#close-modal
-{ background: white; 
-    border: 1px solid #ccc;}
+#close-modal { 
+    background: white; 
+    border: 1px solid #ccc;
+}
 
 .switch { 
     position: relative; 
@@ -153,33 +167,48 @@ body {
     left: 0; 
     right: 0; 
     bottom: 0; 
-    background:#ccc; 
-    border-radius:34px; 
-    cursor:pointer; 
+    background: #ccc; 
+    border-radius: 34px; 
+    cursor: pointer; 
 }
 
 .slider:before {
-    position:absolute; 
-    content:""; 
-    width:18px; 
-    height:18px; 
-    left:2px; 
-    bottom:2px;
-    background:white; 
-    border-radius:50%; 
-    transition:.3s;
+    position: absolute; 
+    content: ""; 
+    width: 18px; 
+    height: 18px; 
+    left: 2px; 
+    bottom: 2px;
+    background: white; 
+    border-radius: 50%; 
+    transition: .3s;
 }
 
 input:checked + .slider { 
-    background:#b394ff; 
+    background: #b394ff; 
 }
 
 input:checked + .slider:before { 
-    transform:translateX(20px); 
+    transform: translateX(20px); 
 }
 
-@media (max-width: 428px) {
+@media (max-width: 480px) {
     body {
-        width: 100%;
+        font-size: 18px;
+    }
+
+    .filters button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .add-btn {
+        padding: 12px;
+        right: 16px;
+        bottom: 12px;
+    }
+
+    .todo-item {
+        font-size: 18px;
     }
 }
